@@ -1,28 +1,18 @@
-<head>
+<div id="ti11_2k"></div>
 
-</head>
-
-<body>
-
-<script src="./ovenplayer.js"></script>
-
-<div id="hawawalive"></div>
-
+<script src="https://live.ap-south-1.linodeobjects.com/ovenplayer.js"></script>
 <script>
-  
-let webrtcSources = OvenPlayer.generateWebrtcUrls([
-  {
-        host : 'ws://live.hawawa.wiki:3333',
-        application : 'event',
-        stream : "hawawa",
-        label : "WebRTC 1080P"
-  }
-]);
 
-let player = OvenPlayer.create("hawawalive", {
-  sources: webrtcSources
-});
-
+  // Initialize OvenPlayer
+  const player = OvenPlayer.create('ti11_2k', {
+      sources: [
+          {
+              label: 'WebRTC 2K',
+              // Set the type to 'webrtc'
+              type: 'webrtc',
+              // Set the file to WebRTC Signaling URL with OvenMediaEngine 
+              file: 'ws://event.chocosobo.com:3333/event/ti11'
+          }
+      ]
+  });
 </script>
-
-</body>

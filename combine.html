@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
+<script src="https://live.ap-south-1.linodeobjects.com/ovenplayer.js"></script>
+
+
+<div id="ti11_2k"></div>
+
+
+<script>
+
+  // Initialize OvenPlayer
+  const player = OvenPlayer.create('ti11_2k', {
+      sources: [
+        {
+            label: '저지연 0.x초',
+            // Set the type to 'webrtc'
+            type: 'webrtc',
+            // Set the file to WebRTC Signaling URL with OvenMediaEngine 
+            file: 'ws://event.chocosobo.com:3333/event/ti11'
+        },
+        {
+            label: '저지연 1.x초',
+            // Set the type to 'hls'
+            type: 'llhls',
+            file: 'https://event.chocosobo.com:3334/event/ti11/llhls.m3u8'
+
+        }
+        ]
+  });
+</script>
